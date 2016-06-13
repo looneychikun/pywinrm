@@ -57,6 +57,9 @@ class Session(object):
     def _clean_error_msg(self, msg):
         """converts a Powershell CLIXML message to a more human readable string
         """
+        # Force conversion to string for python3
+        msg = str(msg)
+        
         # TODO prepare unit test, beautify code
         # if the msg does not start with this, return it as is
         if msg.startswith("#< CLIXML\r\n"):
